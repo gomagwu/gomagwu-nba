@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Deployment</title>
+</head>
+<body>
+    <h1> Predict NBA 2022 Season</h1>
+        <p>
+            Hi User, Welcome to the NBA 2022 Predictor
+        </p>
+    <form action="/predict" , method="POST">
+        <p>
+            Select the 'Predict' button to get the 2022 predictions
+        </p>
+        <input type="submit" value="Predict">
+
+    </form>
+    <form action="/create" , method="POST">
+        <p>
+            You can create a random team of 30 players and see how far your team will go this season<br>
+            Kindly Enter your team Abbreviation (e.g 'BRK', 'ATL' etc.)
+        </p>
+        <input type = 'text' name="Abbreviation" placeholder="3-letters max">
+        <input type= "submit">
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random 2022 NBA Prediction </title>
+</head>
+<body>
+<h1>2022 NBA Predictions for {{ random }}</h1>
+<p>Your Random team of 30 is</p>
+{{ my_team | safe }}
+<p>The Western Conference Ranking at the end of the season</p>
+{{ westrank | safe }}
+<p>The Eastern Conference Ranking at the end of the season</p>
+{{ eastrank | safe }}
+<p>The Eastern Conference Playoff Qualifiers are</p>
+{{ eastconf | safe }}
+<p>The Western Conference Playoff Qualifiers are</p>
+{{ westconf | safe }}
+
+
+{% if westfirst or eastfirst %}
+{% if eastfirst %}
+<p>The Eastern Conference Playoff Match ups are</p>
+<table>
+{% for item in eastfirst %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+{% endif %}
+
+{% if westfirst %}
+<p>The Western Conference Playoff Match ups are</p>
+<table>
+{% for item in westfirst %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+{% endif %}
+{% else %}
+<p> You didn't make it to the Playoffs</p>
+{% endif %}
+
+
+
+{% if westfirst or eastfirst %}
+{% if westsec or eastsec %}
+{% if eastsec %}
+<p>The Eastern Conference 2nd Round Playoff Match ups are</p>
+<table>
+{% for item in eastsec %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+{% endif %}
+
+{% if westsec %}
+<p>The Western Conference 2nd Round Playoff Match ups are</p>
+<table>
+{% for item in westsec %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+{% endif %}
+
+{% else %}
+<p> You didn't make it to the second round</p>
+{% endif %}
+{% endif %}
+
+
+{% if westsec or eastsec %}
+{% if conff %}
+<p>The Conference Final Playoff Match ups are</p>
+<table>
+{% for item in conff %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+{% else %}
+<p> You lost. So close! </p>
+{% endif %}
+{% endif %}
+
+
+{% if conff %}
+{% if wchamp or echamp %}
+{% if echamp %}
+<p>The Eastern Conference Champions </p>
+{{ echamp }}
+{% endif %}
+
+{% if wchamp %}
+<p>The Western Conference Champions</p>
+{{ wchamp }}
+{% endif %}
+
+{% else %}
+<p>You didn't make the Finals. Great Run tho!!</p>
+{% endif %}
+{% endif %}
+
+
+{% if echamp or wchamp %}
+{% if nbachamp %}
+<p>The 2022 NBA Finals Match-up</p>
+{{ fmat }}
+<p>The 2022 NBA Champions </p>
+{{ nbachamp }}
+{% else %}
+<p>You lost the Finals. Great Run bro</p>
+{% endif %}
+{% else %}
+<p>Please Try again sha!</p>
+{% endif %}
+<br>
+<a href="{{url_for('pro')}}">Home</a>
+
+
+</body>
+</html>

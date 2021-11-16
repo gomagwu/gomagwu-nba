@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2022 NBA Season predictions</title>
+</head>
+<body>
+<h1>Welcome to the 2022 NBA Season predictions</h1>
+<p>The Western Conference Ranking at the end of the season</p>
+{{ westrank | safe }}
+<p>The Eastern Conference Ranking at the end of the season</p>
+{{ eastrank | safe }}
+<p>The Eastern Conference Playoff Qualifiers are</p>
+{{ eastconf | safe }}
+<p>The Western Conference Playoff Qualifiers are</p>
+{{ westconf | safe }}
+<p>The Eastern Conference Playoff Match ups are</p>
+<table>
+{% for item in eastfirst %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+<p>The Western Conference Playoff Match ups are</p>
+<table>
+{% for item in westfirst %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+<p>The Eastern Conference 2nd Round Playoff Match ups are</p>
+<table>
+{% for item in eastsec %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+<p>The Western Conference 2nd Round Playoff Match ups are</p>
+<table>
+{% for item in westsec %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+<p>The Conference Final Playoff Match ups are</p>
+<table>
+{% for item in conff %}
+    <tr><td>{{ item }}</td></tr>
+{% endfor %}
+    </table>
+<p>The Conference Champions </p>
+{{ echamp }}<br>
+{{ wchamp }}
+<p>The 2022 NBA Champions </p>
+{{ nbachamp }}
+<br>
+
+<a href="{{url_for('pro')}}">Home</a>
+
+
+</body>
+</html>
